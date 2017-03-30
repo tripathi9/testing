@@ -1,0 +1,40 @@
+{% extends "check/base.html" %}
+{% block title %}<h1>Events list</h1>{% endblock %}
+{% block head %}{% endblock %}
+{% block content %}
+<!-- <form method="post" action=".">
+  {% csrf_token %}
+{{ form.as_p }}
+<input type="submit"  /> -->
+
+
+<div class="jumbotron text-center">
+<h1 style="text-align: center;color:maroon;">{{title}}</h1></div>
+<div style="text-align:center;">
+
+
+  <div style="background-color:linen;padding:10px;border:2px solid grey;overflow: scroll;">
+
+  <table rules="all" style="width:100%;text-align: center;border:2px solid grey;color:marron">
+  <tr class="container" style="text-align: center;color:black">
+    <th style="text-align: center;"><h1>Event Name</h1></th>
+    <th style="text-align: center;"><h1>Event date</h1></th>
+    <th style="text-align: center;"><h1>image</h1></th>
+    <th style="text-align: center;"><h1>Address</h1></th>
+
+  </tr>
+  {% for obj in event_list %}
+  <tr class="container" style="text-align: center;color:maroon;">
+
+    <td><h2>{{obj.event_name}}</h2></td>
+    <td><h2>{{obj.event_date}}</h2></td>
+    <td><h2>{{obj.image}}</h2></td>
+    <td><h2>{{obj.address}}</h2></td>
+  </tr>
+  {% endfor %}
+  </table>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'check/base.html' %}
+
+{% block title %}profile{% endblock %}
+
+{% block content %}
+  <!-- <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form> -->
+  <div class="form">
+           <h1><u>Manage Your Profile</u></h1>
+
+           <form action="" method="post" enctype="multipart/form-data">
+
+             <div>
+               {% csrf_token %}
+               {{ form.as_p }}
+           </div>
+
+
+           <button class="button button-block"/>Save</button>
+
+           </form>
+
+         </div>
+
+
+
+
+
+{% endblock %}

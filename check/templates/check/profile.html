@@ -1,0 +1,150 @@
+{% extends "check/base.html" %}
+{% block title %}<h1>Registeration</h1>{% endblock %}
+{% block head %}{% endblock %}
+{% block content %}
+<!-- <form method="post" action=".">
+  {% csrf_token %}
+{{ form.as_p }}
+<input type="submit"  /> -->
+
+<div>
+  {% if user.is_authenticated %}
+  <u> {{ user.username }}
+<div style="width: 300px;
+    border: 2px solid grey;
+    padding: 25px;
+    margin: 0px;
+    position: relative;
+    height:850px;
+    background:	#808080">
+    <div style="width: 250px;
+        border: 2px solid black;
+        padding:0px;
+        margin: 0px;
+        position: relative;
+        height:350px;
+        background:	#808080">
+        <div>
+
+          {% load static %}
+          <img src={% static "check/profile.png" %} alt="Profile" height="250" width="245">
+
+        </div>
+<div style="color:white;">
+
+  <nav>
+    <center>
+    <ul><h1>
+      <li><a href="/profile/">Create profile</a></li>
+      <li><a href="/updateProfile/">Update Profile</a></li></h1>
+
+    </ul></center>
+  </nav>
+
+
+</div>
+
+
+
+        <div style="  padding:5px;
+          margin: 5px;">
+
+          </div>
+      </div>
+
+
+
+
+        <div style="width: 250px;
+            border: 2px solid black;
+            padding:0px;
+            margin: 0px;
+            position: relative;
+            height:350px;
+            background:	#808080">
+
+
+            <div>
+
+              {% load static %}
+              <img src={% static "check/even.png" %} alt="Profile" height="250" width="245">
+
+            </div>
+
+            <div style="color:white;">
+
+              <nav>
+                <center>
+                <ul><h1>
+                  <li><a href="/event/">Create Events</a></li>
+                  <li><a href="/eventlist/">All Events</a></li></h1>
+
+                </ul></center>
+              </nav>
+
+
+            </div>
+
+
+            <div style="  padding:5px;
+              margin: 5px;">
+
+              </div>
+          </div>
+      </div>
+<div  style="width: 250px;
+    border: 2px solid black;
+    padding:0px;
+    margin-left: 300px;
+    margin-top: -850px;
+    position:absolute;
+    height:850px;
+    width:1370px;
+    background:lightgrey">
+    <div class="jumbotron text-center">
+    <h1 style="text-align: center;color:maroon;">{{title}}</h1></div>
+    <div style="text-align:center;">
+
+
+      <div style="background-color:linen;padding:10px;border:2px solid grey;overflow: scroll;">
+
+      <table rules="all" style="width:100%;text-align: center;border:2px solid grey;color:marron">
+      <tr class="container" style="text-align: center;color:black">
+        <th style="text-align: center;"><h1>Event Name</h1></th>
+        <th style="text-align: center;"><h1>Event date</h1></th>
+        <th style="text-align: center;"><h1>image</h1></th>
+        <th style="text-align: center;"><h1>Address</h1></th>
+
+      </tr>
+      {% for obj in event_list %}
+      <tr class="container" style="text-align: center;color:maroon;">
+
+        <td><a href="/events/{{ obj.id }}/">{{obj.event_name}}</a></td>
+        <td><h2>{{obj.event_date}}</h2></td>
+        <td><h2>{{obj.image}}</h2></td>
+        <td><h2>{{obj.address}}</h2></td>
+      </tr>
+      {% endfor %}
+      </table>
+      </div>
+
+    </div>
+
+  </div>
+  {% else %}
+  <div class="jumbotron text-center">
+  <h1 style="text-align: center;">please login first</h1></div>
+
+
+{% endif %}
+
+
+
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'check/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+  <!-- <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form> -->
+  <div class="form">
+           <h1><u>Welcome Back!</u></h1>
+
+           <form action="" method="post">
+
+             <div>
+               {% csrf_token %}
+               {{ form.as_p }}
+           </div>
+
+
+           <button class="button button-block"/>Log In</button>
+
+           </form>
+
+         </div>
+
+
+
+
+
+{% endblock %}
